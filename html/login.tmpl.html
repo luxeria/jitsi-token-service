@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset=utf-8>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{ .Title }}</title>
+    <style>
+        body,
+        input {
+            font-family: system-ui;
+            font-size: 18px;
+            max-width: 360px;
+            margin: 48px auto 0;
+        }
+
+        div.error {
+            background-color: #fcd3d2;
+            border: 1px solid #811211;
+            color: #811211;
+            border-radius: 3px;
+            text-align: center;
+            padding: 12px;
+            margin-bottom: 24px;
+        }
+
+        h1.title {
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            box-sizing: border-box;
+            margin: 6px 0 12px;
+        }
+
+        input[type=submit] {
+            margin: 12px 0 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="title">{{ .Title }}</h1>
+    {{ if .Error }}
+    <div class="error">
+        {{ .Error }}
+    </div>
+    {{ end }}
+    <form method="POST">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" autofocus required />
+        </div>
+
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required />
+        </div>
+
+        <input type="submit" value="Login" />
+    </form>
+</body>
+
+</html>
