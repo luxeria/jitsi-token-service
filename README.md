@@ -20,14 +20,14 @@ the token service:
 - `COOKIE_NAME` _(required)_: Name of the moderator cookie (example: `jitsi_mod_jwt`)
 - `JWT_VALIDITY` _(default: `1h`)_: Duration for which the generated token
   should be valid for (example: `1h30m`, `300s`)
-- `JWT_SECRET` _(required)_: Secret JWT signing string, this value needs
+- `JWT_APP_SECRET` _(required)_: Secret JWT signing string, this value needs
   to match the one configured in Jitsi meet (example: `my_jitsi_app_secret`)
-- `JWT_ISSUER` _(required)_: JWT issuer, this value needs
+- `JWT_APP_ID` _(required)_: JWT issuer, this value needs
   to match the one configured in Jitsi meet (example: `my_jitsi_app_id`)
 - `JWT_AUDIENCE` _(default: `jitsi`)_: JWT audience, this value needs
   to match the one configured in Jitsi
 - `JWT_LEEWAY` _(default: `1m`)_: Maximum clock drift allowed for JWT validation
-- `JITSI_URL` _(required)_: Jitsi Meet base URL (without the room identifier)
+- `PUBLIC_URL` _(required)_: Jitsi Meet base URL (without the room identifier)
   (example: `https://meet.jitsi`)
 - `HTML_DOCROOT` _(default: `./html`)_: Directory containing the HTML login
   form template

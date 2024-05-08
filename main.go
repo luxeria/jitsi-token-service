@@ -24,12 +24,12 @@ var config struct {
 	CookieName string `env:"COOKIE_NAME,notEmpty"`
 
 	JWTValidity time.Duration `env:"JWT_VALIDITY" envDefault:"1h"`
-	JWTSecret   string        `env:"JWT_SECRET,notEmpty,unset"`
-	JWTIssuer   string        `env:"JWT_ISSUER,notEmpty"`
+	JWTSecret   string        `env:"JWT_APP_SECRET,notEmpty,unset"`
+	JWTIssuer   string        `env:"JWT_APP_ID,notEmpty"`
 	JWTAudience string        `env:"JWT_AUDIENCE" envDefault:"jitsi"`
 	JWTLeeway   time.Duration `env:"JWT_LEEWAY" envDefault:"1m"`
 
-	JitsiURL url.URL `env:"JITSI_URL,notEmpty"`
+	JitsiURL url.URL `env:"PUBLIC_URL,notEmpty"`
 
 	HTMLDocRoot string `env:"HTML_DOCROOT" envDefault:"./html"`
 	HTMLTitle   string `env:"HTML_TITLE" envDefault:"Jitsi Moderator Login"`
